@@ -1,0 +1,113 @@
+{% extends 'auctions/layout.html'%}
+
+{% block title %}
+    {{ product.title }}
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h2>{{product.title}}</h2>
+    </div>
+    <ul class="nav">
+        <li>
+            <div>
+                <h6>posted by <strong>{{ product.user }}</strong></h6>
+                <h6>Category: <a href="/filter_categories/{{ product.category }}">{{ product.category }}</h6></a>
+            </div>
+        </li>
+        <li>
+            {% if invalid_bid %}
+                <div id="bid_error_div">
+                    <h5>Your bid must be higher than the Opening and Current Bid</h5>
+                </div>
+            {% endif %}
+        </li>
+    </ul>
+    <h3 style="margin-left: 870px">Comments</h3> 
+    <ul class="nav" style="margin-top: 30px">
+        <li>
+        <div>
+            <div id="listing_image_div">
+                <img id="list_img" src={{product.image_url}} alt="Image: "{{product.title}}>
+            </div>
+            <div id="listing_description">
+                <h3>Description</h3>    
+                {{listing_description|safe}}
+            </div>
+            {% if close_listing %}
+                <a  href="{% url 'close_listing'%}">
+                    <div id="close_button_div">Close Listing</div>
+                </a>
+        {% endif %}
+        </div>
+        </li>
+        <li id="listing_bid_li">
+            {% if watchlist %}
+            <div id="listing_watchlist_div">
+                <a id="listing_watchlist_button" href="{% url 'watchlist' %}">Remove From Watchlist</a>
+            </div>
+            {% else %}
+            <div id="listing_watchlist_div">
+                <a id="listing_watchlist_button" href="{% url 'watchlist'%}">Add to Watchlist</a>
+            </div>
+            {% endif %}
+            <div id="listing_bid_div">
+                <div>
+                    <h5>Opening Bid: <strong>${{product.opening_bid}}.00</strong></h5>
+                    <p><h5>Current Bid: <strong id="listing_current_bid">${{product.current_bid}}.00</strong></h5>
+                    {% if bid_user is not False %}
+                        with <strong>{{bid_user}}</strong></p>
+                    {% endif %}
+                </div>
+                <hr>
+                <form action="{% url 'bid' %}" method='post'>
+                    {% csrf_token %}
+                    <div id="listing_bid">Bid</div>
+                    {{ bid_form.bid }}
+                    <div>
+                    <input id="listing_bid_button" type="submit" value="Bid">
+                    </div>
+                </form>
+            </div>
+            <div class="bid_history">
+                <h4>Bid History</h4>
+                <ul>
+                    {% for bids in bid_history %}
+                        <li>$ {{ bids.bid }} by {{ bids.user.username }}</li>
+                    {% empty %}
+                        No Bids Yet!
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+        <li>
+        <div class="comments_div_listing">
+            <div id="listing_comments">
+                <div>
+                    <div class="scroll_comments">
+                        {% for com in comments %}
+                            <div class="list_comments"><strong>{{com.comment}}</strong><br>by {{com.user}}</div>
+                        {% empty %}
+                            <div class="list_comments">No Comments yet!<div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="create_comments_div">
+                <form action="{% url 'comment' %}" method='post'>
+                    {% csrf_token %}
+                    <div class="comment_form">
+                        <p>Add Comment <br>
+                        {{ comment_form.comment }}</p>
+                    </div>
+                    <div>
+                        <input id="listing_comment_button" type="submit" value="Comment">
+                    </div>
+                </form>
+            </div>
+            </div>
+    </ul>
+{% endblock %}
+
+

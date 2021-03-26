@@ -1,0 +1,46 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}Close Listing{% endblock %}
+
+{%block body %}
+    <div>
+        <div id="warning_div">
+            <h5>Warning: Closing the listing is permanent, proceed only if your are sure</h5>
+        </div>
+        <div id="close_heading_div">
+        <h3>You are about to close this listing for <strong>{{product.title}}</strong></h3>
+        </div>
+    </div>
+    <ul class="nav" style="margin-top: 30px">
+        <li>
+            <div>
+                <div id="listing_image_div">
+                    <img id="list_img" src={{product.image_url}} alt="Image: "{{product.title}}>
+                </div>
+                <div id="listing_description">
+                    <h3>Description</h3>    
+                    {{listing_description|safe}}
+                </div>
+            </div>
+        </li>
+        <li>
+            <div id="close_bid_div">
+                {% if bid_user %}
+                    <h4>The highest bid of <strong id="listing_current_bid"$>
+                        ${{ product.current_bid }}.00</strong> </h4>
+                        <h4>is by  <strong>{{ bid_user }}</strong>
+                    </h4>
+                {% else %}
+                    <h4>No Bids Made Yet</h4>
+                {% endif %}
+                <div id="close_bid_form">
+                    <h4>Close the listing for for ${{product.current_bid}}?</h4>
+                    <form action="{% url 'close_listing'%}" method="post">
+                        {% csrf_token %}
+                        <input id="close_bid_button" type="submit" value="Close Listing">
+                    </form>
+                </div>
+            </div>
+        </li>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    
+    {% if closed %}
+        <div id="closed_listing_div">
+            <h4>Listing Successfully Closed!</h4>
+        </div>
+    {% endif %}
+    <h2>{{ heading }}</h2>
+    {% for products in listings %}
+        {% if index_page is False or products.closed is False %}
+        <div class="listings"> 
+            <div style="width: 85%">
+                <ul class="nav">
+                <li>
+                        <div>
+                            <img class="index_img" src="{{products.image_url}}" alt="No Image">
+                        </div>
+                </li>
+                <li style="margin-left: 30px">
+                        <div class="index_listings_2">
+                            <h2><a href="/listings/{{products.id}}">{{products.title}}</a></h2>
+                            <h6>posted by {{ products.user.username }}</h6>
+                            <div class="index_bid">
+                                <p><h5>Current Bid: <strong>${{ products.current_bid}}.00</strong></h5></p>
+                            </div>
+                            <h6>Category: <a href="/filter_categories/{{ products.category }}">{{ products.category }}</a></h6>
+                        </div>
+                </li>
+                <li style="margin-left: 50px">
+                        <div>
+                            <p>{{ products.description|safe }}</p>
+                        </div>
+                </li>
+            </div>
+            {% if index_page is False%}
+                    <div class="won_banner">
+                        <p><h5>You have won</h5> <h5>this item!</h5></p>
+                    </div>
+                  {% endif %}
+        </div>
+        {% endif %}
+        {% empty %}
+            <h4>No Listings!</h4>
+            </ul>
+    {% endfor %}
+        <html lang="en">
+{% endblock %}

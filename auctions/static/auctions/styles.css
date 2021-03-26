@@ -1,0 +1,554 @@
+
+/* button */
+
+#create_button, #listing_bid_button, .login_register_button {
+    background-color: rgb(69, 76, 102);
+    border-radius: 20px;
+    width: 20%;
+    color: white;
+    margin-left: auto;
+}
+
+#create_button:hover, .login_register_button:hover {
+    box-shadow: 2px 2px 10px gray;
+}
+
+#listing_bid_button {
+    background-color: rgb(21, 226, 65);
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 0px;
+    height: 30px;
+    width: 100%;
+}
+
+#listing_bid_button:hover {
+    background-color: rgb(55, 255, 81);
+    box-shadow: 1px 1px 5px gray;
+}
+
+.login_register_button {
+    margin-top: 30px;
+    width: 30%;
+    height: 35px;
+    border:0px;
+}
+
+
+/* div */
+
+
+.body_div {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.bid_history {
+    margin-top: 20px;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: auto;
+    height: 220px;
+}
+.categories {
+    box-shadow: 1px 1px 10px gray;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 15%;
+}
+
+.categories:hover {
+    box-shadow: 1px 1px 15px gray;
+}
+
+#close_bid_div {
+    box-shadow: 1px 1px 10px gray;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#close_bid_form {
+    margin-top: 40px;
+}
+
+#close_heading_div {
+    margin-top: 30px;
+    display: flex;
+    width: 40%;
+    flex-wrap: wrap;
+}
+
+#close_button_div {
+    margin-top: 30px;
+    margin-left: 28px;
+    background-color: rgb(255, 62, 62);
+    border-radius: 10px;
+    width: 30%;
+    height: 35px;
+    padding: 5px;
+    padding-left: 28px;
+    color: white;
+}
+
+#close_button_div:hover {
+    box-shadow: 1px 1px 10px gray;
+}
+
+#create_button_div {
+    margin-left: 30px;
+    margin-top: 0px;
+}
+
+.create_form {
+    display: flex;
+    justify-content: center;
+}
+
+.create_form_style {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 20px gray;
+    border-radius: 10px;
+}
+
+#create_rest {
+    margin-left: 50px;
+}
+
+.create_comments_div {
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 15px;
+    margin-top: 18px;
+    padding: 20px;
+}
+
+#bid_error_div {
+    background-color: rgb(255, 205, 225);
+    color: rgb(255, 66, 66);
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    margin-left: 400px;
+}
+
+.index_listings_2 {
+    margin-left: 30px;
+}
+
+.index_bid {
+    margin-top: 50px;
+}
+
+.index_bid strong {
+    font-size: larger;
+}
+.listings {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    background-color: white;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 120px;
+    margin-right: 120px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px gray;
+}
+
+#listing_bid_li {
+    margin-right: 100px;
+}
+
+#listing_bid_div {
+    background-color: white;
+    box-shadow: 1px 1px 10px gray;
+    padding: 15px;
+    height: 335px;
+    border-radius: 10px;
+}
+#listing_bid {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.list_comments {
+    box-shadow: 1px 1px 10px gray;
+    padding: 5px;
+    margin-top: 5px;
+    width: 500px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.scroll_comments {
+    height: 380px;
+    padding-right: 20px;
+    overflow-y: auto;
+}
+
+#listing_current_bid {
+    color: red;
+    font-size: 30px;
+}
+
+.listing_closed {
+    border-radius: 10px;
+    background-color: rgb(255, 205, 225);
+    width: 75%;
+    color: rgb(255, 62, 62);
+    padding: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#listing_description {
+    margin-top: 18px;
+    margin-left: 25px;
+    padding: 20px;
+    height: 220px;
+    border-radius: 15px;
+    width: 380px;
+    box-shadow: 1px 1px 10px gray;
+    overflow-y: auto;
+}
+
+#listing_image_div {
+    margin-left: 25px;
+    margin-right: 100px;
+    width: 380px;
+    height: 380px;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#listing_watchlist_button, #listing_comment_button, #close_bid_button,
+#close_listing_button {
+    background-color: rgb(69, 76, 102);
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    height: 50px;
+}
+
+#close_bid_button {
+    margin-top: 20px;
+    background-color: rgb(255, 62, 62);
+}
+
+#close_listing_button {
+    background-color: rgb(255, 62, 62);
+    padding: 5px;
+    width: 100px;
+}
+
+#close_bid_button:hover {
+    box-shadow: 1px 1px 5px gray;
+}
+
+
+#listing_watchlist_button {
+    box-shadow: 1px 1px 10px gray;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#listing_comment_button {
+    width: 20%;
+    height: 30px;
+    padding: 3px;
+    margin-left: 390px;
+}
+
+
+#listing_watchlist_button:hover, #listing_comment_button:hover {
+        background-color: rgb(88, 97, 122)
+}
+
+#listing_watchlist_div {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.login_div, .register_div {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 20px;
+    width: 20%;
+    color: rgb(69, 76, 102);
+    height: 400px;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+.register_div {
+    height: 540px;
+    width: 23%;
+    border-radius: 25px;
+}
+
+.register_text {
+    margin-bottom: 70px;
+    margin-top: 30px;
+}
+.register_space {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.login_text {
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+#login_register {
+    margin-top: 30px;
+}
+
+.login_username {
+    margin-bottom: 20px;
+}
+
+
+.menu_options_div, .menu_options_div_user {
+    height: min-content;
+    padding: 2px;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    margin-right: 15px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+
+.menu_options_div:hover, .menu_options_div_user:hover {
+    background-color: rgb(88, 97, 122);
+}
+
+#title_desc {
+    margin-right: 200px;
+    margin-left: 30px;
+}
+
+#title_div {
+    background-color: rgb(39, 43, 56);
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.top_menu {
+    background-color: rgb(52, 57, 78);
+    box-shadow: 2px 6px 20px rgb(52, 57, 78);
+}
+
+#warning_div, #closed_listing_div {
+    background-color: rgb(255, 255, 146);
+    color: brown;
+    padding: 5px;
+    padding-top: 7px;
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#closed_listing_div {
+    background-color: rgb(177, 248, 181);
+    color: green;
+    border-radius: 10px;
+
+}
+
+.won_banner {
+    background-color: rgb(177, 248, 181);
+    border-radius: 10px;
+    color: green;
+    padding: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+
+/* default tags */
+
+.create_form div {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.top_menu a {
+    color: white;
+}
+.top_menu a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+a {
+    color: rgb(69, 76, 102);
+}
+
+a:hover {
+    color: rgb(118, 126, 153);
+    text-decoration: none;
+}
+
+#title_div img {
+    margin-left: 20px;
+    width: 50px;
+}
+
+label {
+    vertical-align: middle;
+}
+hr {
+    margin-top: 20px;
+}
+
+
+
+
+/* forms */
+
+#id_bid, #id_comment {
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 7px gray;
+    height: 35px;
+    width: 100%;
+    text-indent: 5px;
+}
+
+#id_bid:focus {
+    outline: none;
+    border: 0px;
+    box-shadow: inset 1px 1px 10px gray;
+}
+
+#id_comment {
+    height: 100px;
+    width: 100%;
+}
+
+#id_comment:focus {
+    outline: none;
+    border: 0px;
+}
+
+#id_title, #id_description, #id_opening_bid, #id_image_url {
+    border: 0px;
+    padding: 2px;
+    text-indent: 5px;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 7px gray;
+    height: 35px;
+    background-color: white;
+}
+#id_title, #id_description {
+    width: 150%;
+}
+
+#id_description {
+    height: 100%;
+}
+
+#id_title:focus, #id_description:focus, #id_opening_bid:focus, #id_image_url:focus{
+    border: 0px;
+    outline: 0px;
+    box-shadow: inset 1px 1px 12px gray;
+}
+
+#id_category {
+    width: 90%;
+}
+
+#id_image_url {
+    width: 90%;
+}
+
+#id_opening_bid {
+    width: 90%;
+}
+
+
+.login_forms {
+    border: 0px;
+    height: 35px;
+    width: 75%;
+    box-shadow: inset 1px 1px 7px gray;
+    border-radius: 5px;
+}
+
+.login_forms:focus {
+    outline: 0px;
+    border: 0px;
+    box-shadow: inset 1px 1px 12px gray;
+}
+
+/* images */
+
+#list_img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.index_img {
+    width: 200px;
+    max-height: 250px;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
+/* others */
+
+#sign_in {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px gray;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(88, 97, 122);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(98, 105, 129);
+    cursor: pointer;
+}

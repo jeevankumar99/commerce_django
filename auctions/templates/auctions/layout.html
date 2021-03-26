@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <title>{% block title %}Auctions{% endblock %}</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="title_div">
+            <ul class="nav">
+                <li class="nav-item">
+                    <h1>Auctions<h1>
+                </li>
+                <li>
+                   <img src="{% static "auctions/auction_logo.png"%}" alt=' ' >
+                </li>
+                <li id="sign_in">
+                    {% if user.is_authenticated %}
+                        Signed in as <strong>{{ user.username }}</strong>.
+                    {% else %}
+                        Not signed in.
+                    {% endif %}
+                </li>
+            </ul>   
+        </div>
+        <div class="top_menu">
+            <ul class="nav">
+                    <a href="{% url 'create' %}">
+                    <div class="menu_options_div">Create Listings</div></a>
+
+                    <a href="{% url 'index' %}">
+                    <div class="menu_options_div">Active Listings</div></a>
+                    
+                    <a href="{% url 'my_watchlist' %}">
+                    <div class="menu_options_div">My Watchlist</div></a>
+
+                    <a href="{% url 'my_winnings' %}">
+                    <div class="menu_options_div">My Winnings</div></a>
+                    
+                    <a href="{% url 'categories' %}">
+                    <div class="menu_options_div">Categories</div></a>
+
+                {% if user.is_authenticated %}
+                        <a style="margin-left: auto" href="{% url 'logout' %}">
+                        <div class="menu_options_div_user">Log Out</div></a>
+                {% else %}
+                        <a style="margin-left: auto" href="{% url 'login' %}">
+                        <div class="menu_options_div_user">Log In</div></a>
+                        
+                        <a href="{% url 'register' %}">
+                        <div class="menu_options_div">Register</div></a>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="body_div">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
